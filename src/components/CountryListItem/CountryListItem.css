@@ -1,0 +1,28 @@
+.item-frame {
+    display: flex;
+    flex-direction: column;
+    max-width: 220px;
+
+    padding: 18px;
+    margin: 20px;
+
+    border: solid;
+    border-color: rgb(190, 190, 190);
+    border-width: 2px;
+    border-radius: 8px;
+}
+
+.item-frame > img {
+    margin-bottom: 20px;
+}
+
+.country-item {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.small-label {
+    font-size: 14px;
+    margin-right: 12px;
+}
