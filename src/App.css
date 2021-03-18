@@ -116,6 +116,15 @@
   box-shadow: 0px 3px 5px 0px rgb(228, 228, 228);
 }
 
+#customized-menu > div.MuiPaper-root.MuiMenu-paper.Component-paper-12.MuiPopover-paper.MuiPaper-elevation0.MuiPaper-rounded > ul > li.MuiButtonBase-root.MuiListItem-root.MuiMenuItem-root.WithStyles\(ForwardRef\(MenuItem\)\)-root-13.Mui-selected.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button.Mui-selected:focus {
+  background-color: #437fee57;
+}
+
+#customized-menu > div.MuiPaper-root.MuiMenu-paper.Component-paper-12.MuiPopover-paper.MuiPaper-elevation0.MuiPaper-rounded > ul > li.MuiButtonBase-root.MuiListItem-root.MuiMenuItem-root.WithStyles\(ForwardRef\(MenuItem\)\)-root-13.Mui-selected.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button.Mui-selected > div > span {
+  color: black;
+  font-weight: bold;
+}
+
 @media (max-width: 650px) {
   .filter {
     visibility: hidden;

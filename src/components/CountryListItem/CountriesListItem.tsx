@@ -1,14 +1,15 @@
 import Country from '../../model/Country';
 import './CountryListItem.css';
+
 interface CountryListItemProps {
     key: string | number,
-    country: Country
+    country: Country,
+    clickCallback: Function
 }
 
-const CountryListItem = (props: CountryListItemProps) => {
-
+const CountriesListItem = (props: CountryListItemProps) => {
     return (
-        <div className="item-frame">
+        <div className="item-frame" onClick={() => {props.clickCallback(props.country.capital)}}>
             <img src={props.country.flag} alt="flag" />
             <div>
                 <div className="name">{props.country.name}</div>
@@ -33,4 +34,4 @@ const CountryListItem = (props: CountryListItemProps) => {
     );
 }
 
-export default CountryListItem;
+export default CountriesListItem;
