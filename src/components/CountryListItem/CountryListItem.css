@@ -1,11 +1,10 @@
 .item-frame {
   display: flex;
   flex-direction: column;
-  
-  height: 220px;
-  min-height: 220px;
-  
-  width: 200px;
+  overflow: hidden;
+
+  height: fit-content;
+  width: 220px;
   
   margin-bottom: 20px;
   margin-left: 20px;
@@ -33,14 +32,16 @@
 }
 
 .item-frame > img {
-  height: 58%;
+  height:50%;
   margin-bottom: 14px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  object-fit: cover;
 }
 
 .name {
     padding-left: 14px;
+    padding-right: 14px;
     padding-bottom: 8px;
     font-weight: 500;
 }

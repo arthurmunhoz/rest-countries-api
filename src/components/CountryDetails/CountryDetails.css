@@ -1,0 +1,93 @@
+.button {
+  height: 20px;
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  border-radius: 4px;
+  background-color: white;
+
+  -webkit-box-shadow: 0px 3px 5px 0px rgb(228, 228, 228);
+  -moz-box-shadow: 0px 3px 5px 0px rgb(228, 228, 228);
+  box-shadow: 0px 3px 5px 0px rgb(228, 228, 228);
+}
+
+.button > p {
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+.button:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 4px 6px 1px rgb(207, 207, 207);
+  -moz-box-shadow: 0px 4px 6px 1px rgb(207, 207, 207);
+  box-shadow: 0px 4px 6px 1px rgb(207, 207, 207);
+}
+
+.country-info-frame {
+  height: calc(100vh - 204px);
+  width: 100%;
+  display: flex;
+  padding: 24px;
+}
+
+.country-info-frame > img {
+  height: 75%;
+  object-fit: contain;
+}
+
+.text-info-frame {
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 32px;
+
+  background-color: turquoise;
+}
+
+.info-grid {
+  display: flex;
+  margin-top: 24px;
+}
+
+.name-cd {
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-bottom: 8px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.country-item-cd {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: baseline;
+
+  margin-bottom: 6px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.value-cd {
+  font-size: 13px;
+  font-weight: lighter;
+}
+
+.small-label-cd {
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: 28px;
+}
+
+@media (max-width: 907px) {
+  .info-grid {
+    flex-direction: column;
+  }
+}

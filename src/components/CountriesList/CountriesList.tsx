@@ -1,4 +1,4 @@
-import { TextField, ListItemText, Grid, Menu, MenuItem, MenuProps, withStyles, CircularProgress } from "@material-ui/core";
+import { TextField, ListItemText, Grid, Menu, MenuItem, MenuProps, withStyles } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import Country from "../../model/Country";
 import CountriesListItem from "../CountryListItem/CountriesListItem";
@@ -11,19 +11,19 @@ export interface CountriesListProps {
 }
 
 export enum Regions {
-  all = 'all',
-  africa = 'africa',
-  americas = 'americas',
-  asia = 'asia',
-  europe = 'europe',
-  oceania = 'oceania'
+  all = 'All',
+  africa = 'Africa',
+  americas = 'Americas',
+  asia = 'Asia',
+  europe = 'Europe',
+  oceania = 'Oceania'
 };
 
 const CountriesList = (props: CountriesListProps) => {
 
   const history = useHistory();
   const [selectedCountry, setSelectedCountry] = useState<Country | undefined>(undefined);
-  const [region, setRegion] = useState<string>("");
+  const [region, setRegion] = useState<string>(Regions.all);
   const [filterText, setFilterText] = useState<string>("");
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [filteredList, setFilteredList] = useState<Country[]>([]);
@@ -65,16 +65,23 @@ const CountriesList = (props: CountriesListProps) => {
     if (filterText === "") {
       setFilteredList(props.list);
     } else {
-      setFilteredList(props.list.filter(country => country.name.toLocaleLowerCase() === filterText.toLocaleLowerCase()));
+      setFilteredList(props.list.filter(country => country.name.toLocaleLowerCase().includes(filterText)));
     }
   }, [filterText]);
 
   useEffect(() => {
+    
+    setFilterText("")
+    
     if (region === Regions.all || region === "") {
       setFilteredList(props.list);
     } else {
       setFilteredList(props.list.filter(country => country.region.toLocaleLowerCase() === region.toLocaleLowerCase()));
     }
+
+    if (document.getElementById("search-textfield")) { 
+      document.getElementById("search-textfield")!.title = "" 
+  };
   }, [props.list, region]);
 
   const handleClose = () => {
@@ -93,30 +100,26 @@ const CountriesList = (props: CountriesListProps) => {
 
   const handleCountrySelection = async (capital: string) => {
 
-    const name = filteredList.filter(country => {
+    const auxCountry = filteredList.filter(country => {
       return country.capital === capital;
-    })[0].name;
+    })[0];
 
-    console.log("Selected: ", name);
+    console.log("Selected: ", auxCountry.alpha3Code)
 
-    history.push(`/details?country=${name}`);
-    // getCountryByCapital(capital).then(res => {
-    //   res && setSelectedCountry(res as Country);
-    // });
+    history.push(`/details?countryCode=${auxCountry.alpha3Code}`);
   };
 
   return (
 
     <div className="body">
-      {
-        console.log("LIST >>", props.list)
-      }
       <div className="toolbar">
         <div className="search-bar">
           <SearchIcon fontSize={'default'} color={'action'} />
           <TextField
+            id="search-textfield"
             className="textfield"
             placeholder="Search for a country..."
+            value={filterText === "" ? null : filterText}
             onChange={(e) => setFilterText(e.target.value)}
           />
         </div>
@@ -124,7 +127,7 @@ const CountriesList = (props: CountriesListProps) => {
           onClick={handleClick}
           aria-controls="customized-menu"
         >
-          <p>Filter by region</p>
+          <p>{(region !== Regions.all) ? region : "Filter by region"}</p>
           <ArrowDropDownIcon fontSize={'default'} />
         </div>
         <StyledMenu
