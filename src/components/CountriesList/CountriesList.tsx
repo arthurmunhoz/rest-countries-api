@@ -66,7 +66,7 @@ const CountriesList = (props: CountriesListProps) => {
     if (filterText === "") {
       setFilteredList(props.list);
     } else {
-      setFilteredList(props.list.filter(country => country.name.toLocaleLowerCase().includes(filterText)));
+      setFilteredList(props.list.filter(country => country.name.toLowerCase().includes(filterText.toLowerCase())));
     }
   }, [filterText]);
 
