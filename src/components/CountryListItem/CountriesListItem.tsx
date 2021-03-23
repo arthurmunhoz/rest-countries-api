@@ -4,12 +4,13 @@ import './CountryListItem.css';
 interface CountryListItemProps {
     key: string | number,
     country: Country,
-    clickCallback: Function
+    clickCallback: Function,
+    darkTheme: boolean
 }
 
 const CountriesListItem = (props: CountryListItemProps) => {
     return (
-        <div className="item-frame" onClick={() => {props.clickCallback(props.country.capital)}}>
+        <div className={`item-frame ${props.darkTheme ? " dark-item-frame" : ""}`} onClick={() => {props.clickCallback(props.country.capital)}}>
             <img src={props.country.flag} alt="flag" />
             <div>
                 <div className="name">{props.country.name}</div>

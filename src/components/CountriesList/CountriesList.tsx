@@ -7,7 +7,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import { useHistory } from "react-router-dom";
 
 export interface CountriesListProps {
-  list: Country[]
+  list: Country[],
+  darkTheme: boolean
 }
 
 export enum Regions {
@@ -113,7 +114,7 @@ const CountriesList = (props: CountriesListProps) => {
 
     <div className="body">
       <div className="toolbar">
-        <div className="search-bar">
+        <div className={`search-bar ${props.darkTheme ? "dark-search-bar" : ""}`}>
           <SearchIcon fontSize={'default'} color={'action'} />
           <TextField
             id="search-textfield"
@@ -123,7 +124,7 @@ const CountriesList = (props: CountriesListProps) => {
             onChange={(e) => setFilterText(e.target.value)}
           />
         </div>
-        <div className="filter"
+        <div className={`filter ${props.darkTheme ? "dark-filter" : ""}`}
           onClick={handleClick}
           aria-controls="customized-menu"
         >
@@ -192,6 +193,7 @@ const CountriesList = (props: CountriesListProps) => {
                     key={country.numericCode}
                     country={country}
                     clickCallback={handleCountrySelection}
+                    darkTheme={props.darkTheme}
                   />
                 </Grid>
               })

@@ -1,3 +1,15 @@
+.dark-item-frame * {
+  color: white;
+}
+
+.dark-item-frame {
+  background-color: #2B3743 !important;
+
+  -webkit-box-shadow: 0px 3px 5px 0px #222f365e !important;
+  -moz-box-shadow: 0px 3px 5px 0px #222f365e !important;
+  box-shadow: 0px 3px 5px 0px #222f365e !important;
+}
+
 .item-frame {
   display: flex;
   flex-direction: column;
@@ -43,12 +55,12 @@
     padding-left: 14px;
     padding-right: 14px;
     padding-bottom: 8px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .country-item {
   display: flex;
-  justify-content: space-between;
   flex-direction: row;
   align-items: baseline;
 
@@ -60,7 +72,7 @@
 }
 
 .small-label {
-  font-size: 14px;
-  font-variant-caps: all-small-caps;
-  margin-right: 12px;
+  font-size: 12px;
+    font-weight: bold;
+    margin-right: 12px;
 }

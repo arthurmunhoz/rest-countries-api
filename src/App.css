@@ -1,8 +1,25 @@
+* {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
 .frame {
   width: 100%;
   height: 100vh;
   background-color: rgba(240, 240, 240, 0.397);
   overflow: hidden;
+}
+
+.dark-frame {
+  background: #202D36 !important;
+}
+
+.dark-header {
+  background: #2B3743 !important;
+  color: rgba(255, 255, 255, 0.781) !important;
+
+  -webkit-box-shadow: 0px 3px 5px 0px #222f365e;
+  -moz-box-shadow: 0px 3px 5px 0px #222f365e;
+  box-shadow: 0px 3px 5px 0px #222f365e !important;
 }
 
 .header {
@@ -24,14 +41,24 @@
   background-color: white;
 }
 
+.dark-button-custom {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.781) !important;
+}
+
 .button-custom {
-  -webkit-box-shadow: 0px 3px 5px 0px rgb(228, 228, 228) !important;
-  -moz-box-shadow: 0px 3px 5px 0px rgb(228, 228, 228) !important;
-  box-shadow: 0px 3px 5px 0px rgb(228, 228, 228) !important;
+  height: 30px;
+
+  font-size: 12px !important;
+  text-transform: none !important;
+
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .button-custom:hover {
-  background: rgba(235, 235, 235, 0.562) !important;
+  background: rgba(235, 235, 235, 0.479) !important;
 }
 
 .grid {
@@ -40,7 +67,12 @@
 }
 
 #root > div > div.body {
-  height: 100%;
+  height: calc(100% - 60px);
+  max-height: calc(100% - 60px);
+  width: 100%;
+
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .theme-switcher {
@@ -88,6 +120,11 @@
   font-size: 14px !important;
 }
 
+.dark-search-bar {
+  background-color: #2B3743 !important;
+  color: rgb(255, 255, 255) !important;
+}
+
 .search-bar {
   height: 40px;
   width: 25%;
@@ -101,6 +138,11 @@
   align-items: center;
 
   background-color: white;
+}
+
+.dark-filter {
+  background-color: #2B3743 !important;
+  color: rgba(255, 255, 255, 0.705) !important;
 }
 
 .filter {
@@ -117,12 +159,26 @@
   background-color: white;
 }
 
+.dark-filter:hover {
+  -webkit-box-shadow: 0px 3px 5px 0px #222f365e;
+  -moz-box-shadow: 0px 3px 5px 0px #222f365e;
+  box-shadow: 0px 3px 5px 0px #222f365e !important;
+}
+
 .filter:hover {
   cursor: pointer;
 
   -webkit-box-shadow: 0px 3px 5px 0px rgb(228, 228, 228);
   -moz-box-shadow: 0px 3px 5px 0px rgb(228, 228, 228);
   box-shadow: 0px 3px 5px 0px rgb(228, 228, 228);
+}
+
+.dark-search-bar .MuiSvgIcon-colorAction {
+  color: rgba(255, 255, 255, 0.541);
+}
+
+.dark-search-bar input {
+  color: rgb(255, 255, 255);
 }
 
 #customized-menu > div.MuiPaper-root.MuiMenu-paper.Component-paper-12.MuiPopover-paper.MuiPaper-elevation0.MuiPaper-rounded > ul > li.MuiButtonBase-root.MuiListItem-root.MuiMenuItem-root.WithStyles\(ForwardRef\(MenuItem\)\)-root-13.Mui-selected.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button.Mui-selected:focus {

@@ -6,7 +6,8 @@ import './CountryDetails.css'
 import { getCountryByCode } from "../../api/APIManager";
 import { useEffect, useState } from "react";
 interface CountryDetailsProps {
-  list: Country[]
+  list: Country[],
+  darkTheme: boolean
 }
 
 const CountryDetails = (props: CountryDetailsProps) => {
@@ -18,7 +19,6 @@ const CountryDetails = (props: CountryDetailsProps) => {
 
   useEffect(() => {
     getCountryByCode(query.get("countryCode")!.toLocaleLowerCase()).then(res => {
-      console.log("countryEEEEEEEEEEEEEEEEE: ", res);
       setCountry(res as Country);
     });
   }, []);
@@ -42,7 +42,7 @@ const CountryDetails = (props: CountryDetailsProps) => {
         <div className="text-info-frame">
           <div className="name name-cd">{country.name}</div>
           <div className="info-grid">
-            <div className="grid-part">
+            <div className="grid-left">
 
               <div className="country-item-cd">
                 <div className="small-label-cd">Native Name:</div>
@@ -69,7 +69,7 @@ const CountryDetails = (props: CountryDetailsProps) => {
                 <div className="value-cd">{country.capital}</div>
               </div>
             </div>
-            <div className="grid-part grid-right">
+            <div className="grid-right">
               <div className="country-item-cd">
                 <div className="small-label-cd">Top Level Domain:</div>
                 <div className="value-cd">{country.topLevelDomain}</div>
@@ -84,9 +84,18 @@ const CountryDetails = (props: CountryDetailsProps) => {
                 <div className="small-label-cd">Languages:</div>
                 <div className="value-cd">{country.languages.map(lang => lang.name.concat(" "))}</div>
               </div>
-              
             </div>
           </div>
+
+          <div className="country-item-cd border-countries-frame">
+              <div className="small-label-cd">Border countries:</div>
+              {
+                country.borders.map(ctryAlpha3Code => {
+                  return <div className="chip">{props.list.find(c => c.alpha3Code === ctryAlpha3Code)?.name}</div>
+                })
+              }
+            </div>
+
         </div>
       </div>
     </div> : <></>

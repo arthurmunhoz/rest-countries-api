@@ -15,6 +15,7 @@ export const useQuery = () => {
 const App = () => {
 
   const [list, setList] = useState<Country[]>([]);
+  const [darkTheme, setDarkTheme] = useState(false);
   
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -37,18 +38,23 @@ const App = () => {
     console.log("list", list);
   }, [list]);
 
+  const handleThemeChange = () => {
+    setDarkTheme(!darkTheme);
+  }
+
   return (
 
-    <div className="frame">
-      <div className="header">
+    <div className={`frame ${darkTheme ? "dark-frame" : ""}`}>
+      <div className={`header ${darkTheme ? "dark-header" : ""}`}>
         <h3>Where in the world?</h3>
         <Button
           variant="contained"
           color="inherit"
-          className={classes.button.concat(" button-custom")}
+          className={classes.button.concat(" button-custom").concat(`${darkTheme ? " dark-button-custom" : ""}`)}
           startIcon={<NightsStayOutlined />}
+          onClick={handleThemeChange}
         >
-          Night mode
+          Dark Mode
       </Button>
         {/* <div className="theme-switcher">
           <NightsStayOutlined style={{ width: "16px", height: "16px", marginRight: "8px" }} />
@@ -60,12 +66,12 @@ const App = () => {
           <Route
             path="/"
             exact={true}
-            render={(props) => <CountriesList {...props} list={list} />}
+            render={(props) => <CountriesList {...props} list={list} darkTheme={darkTheme} />}
           />
           <Route
             path="/details"
             exact={true}
-            render={(props) => <CountryDetails {...props} list={list} />}
+            render={(props) => <CountryDetails {...props} list={list} darkTheme={darkTheme} />}
           />
         </Switch>
       </BrowserRouter>
