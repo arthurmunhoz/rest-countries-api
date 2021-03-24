@@ -10,7 +10,7 @@
 }
 
 .dark-frame {
-  background: #202D36 !important;
+  background: hsl(207, 26%, 17%) !important;
 }
 
 .dark-header {
@@ -62,7 +62,7 @@
 }
 
 .grid {
-  height: calc(100vh - 120px);
+  height: calc(100vh - 156px);
   overflow-y: auto;
 }
 
@@ -121,7 +121,7 @@
 }
 
 .dark-search-bar {
-  background-color: #2B3743 !important;
+  background-color: hsl(209, 23%, 22%) !important;
   color: rgb(255, 255, 255) !important;
 }
 
@@ -141,7 +141,7 @@
 }
 
 .dark-filter {
-  background-color: #2B3743 !important;
+  background-color: hsl(209, 23%, 22%) !important;
   color: rgba(255, 255, 255, 0.705) !important;
 }
 
@@ -160,9 +160,9 @@
 }
 
 .dark-filter:hover {
-  -webkit-box-shadow: 0px 3px 5px 0px #222f365e;
-  -moz-box-shadow: 0px 3px 5px 0px #222f365e;
-  box-shadow: 0px 3px 5px 0px #222f365e !important;
+  -webkit-box-shadow: 0px 3px 5px 0px hsl(208, 28%, 14%) !important;
+  -moz-box-shadow: 0px 3px 5px 0px hsl(208, 28%, 14%) !important;
+  box-shadow: 0px 3px 5px 0px hsl(208, 28%, 14%) !important;
 }
 
 .filter:hover {
@@ -181,16 +181,23 @@
   color: rgb(255, 255, 255);
 }
 
-#customized-menu > div.MuiPaper-root.MuiMenu-paper.Component-paper-12.MuiPopover-paper.MuiPaper-elevation0.MuiPaper-rounded > ul > li.MuiButtonBase-root.MuiListItem-root.MuiMenuItem-root.WithStyles\(ForwardRef\(MenuItem\)\)-root-13.Mui-selected.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button.Mui-selected:focus {
-  background-color: #437fee57;
+#customized-menu > div.MuiPaper-root.MuiMenu-paper.Component-paper-189.MuiPopover-paper.MuiPaper-elevation0.MuiPaper-rounded > ul > li.MuiButtonBase-root.MuiListItem-root.MuiMenuItem-root.WithStyles\(ForwardRef\(MenuItem\)\)-root-190.Mui-selected.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button.Mui-selected:focus {
+  background-color: hsl(209, 23%, 22%) ;
 }
 
-#customized-menu > div.MuiPaper-root.MuiMenu-paper.Component-paper-12.MuiPopover-paper.MuiPaper-elevation0.MuiPaper-rounded > ul > li.MuiButtonBase-root.MuiListItem-root.MuiMenuItem-root.WithStyles\(ForwardRef\(MenuItem\)\)-root-13.Mui-selected.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button.Mui-selected > div > span {
-  color: black;
-  font-weight: bold;
+.MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:focus {
+  background-color: rgba(197, 197, 197, 0.671) !important;
+}
+
+.MuiListItemText-root span {
+  color: black !important;
 }
 
 @media (max-width: 650px) {
+
+  .grid {
+    height: calc(100vh - 208px);
+  }
 
   .toolbar {
     flex-direction: column;

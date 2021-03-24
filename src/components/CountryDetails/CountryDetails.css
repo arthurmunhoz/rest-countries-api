@@ -1,12 +1,19 @@
+.dark-button {
+  color: white !important;
+  background-color: hsl(209, 23%, 22%) !important;
+
+  -webkit-box-shadow: 0px 3px 5px 0px hsl(208, 28%, 14%) !important;
+  -moz-box-shadow: 0px 3px 5px 0px hsl(208, 28%, 14%) !important;
+  box-shadow: 0px 3px 5px 0px hsl(208, 28%, 14%) !important;
+}
+
 .button {
-  height: 20px;
+  height: 30px;
   width: fit-content;
 
   display: flex;
   align-items: center;
 
-  padding-top: 10px;
-  padding-bottom: 10px;
   padding-left: 24px;
   padding-right: 24px;
 
@@ -39,6 +46,7 @@
 
 .country-info-frame > img {
   height: 75%;
+  max-width: 40%;
   object-fit: contain;
 }
 
@@ -56,17 +64,24 @@
   margin-top: 24px;
 }
 
+.dark-name-cd {
+  color: white !important;
+}
+
 .name-cd {
   padding-left: 14px;
   padding-right: 14px;
   padding-bottom: 8px;
   font-size: 22px;
-  font-weight: 500;
+  font-weight: bold;
+}
+
+.dark-country-item-cd > div {
+  color: white !important;
 }
 
 .country-item-cd {
   display: flex;
-  /* justify-content: space-between; */
   flex-direction: row;
   align-items: baseline;
 
@@ -86,23 +101,35 @@
 }
 
 .small-label-cd {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.4px;
   margin-right: 8px;
+}
+
+.dark-chip {
+  border: none !important;
+  background-color: hsl(209, 23%, 22%) !important;
 }
 
 .chip {
   height: fit-content;
+  min-height: 15px;
+
   width: fit-content;
+  min-width: 60px;
 
   display: grid;
   place-items: center;
 
   margin-right: 12px;
-  padding: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 
   border: solid;
-  border-radius: 6px;
+  border-radius: 4px;
   border-color: gainsboro;
   border-width: 1px;
 
@@ -132,12 +159,12 @@
   }
 
   .country-info-frame > img {
-    width: 80%;
+    max-width: 80%;
     max-height: 200px;
     margin-bottom: 24px;
     align-self: center;
   }
-
+  
   .text-info-frame {
     height: fit-content;
   }

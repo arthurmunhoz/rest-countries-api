@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { TextField, ListItemText, Grid, Menu, MenuItem, MenuProps, withStyles } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import Country from "../../model/Country";
@@ -23,7 +24,6 @@ export enum Regions {
 const CountriesList = (props: CountriesListProps) => {
 
   const history = useHistory();
-  const [selectedCountry, setSelectedCountry] = useState<Country | undefined>(undefined);
   const [region, setRegion] = useState<string>(Regions.all);
   const [filterText, setFilterText] = useState<string>("");
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

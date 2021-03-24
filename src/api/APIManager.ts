@@ -1,5 +1,4 @@
 import axios from "axios"
-import { resolve } from "path";
 import Country from "../model/Country";
 
 /**

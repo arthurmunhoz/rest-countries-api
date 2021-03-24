@@ -8,6 +8,10 @@ interface CountryListItemProps {
     darkTheme: boolean
 }
 
+export const formatPopulationNumber = (population: number) => {
+    return population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
 const CountriesListItem = (props: CountryListItemProps) => {
     return (
         <div className={`item-frame ${props.darkTheme ? " dark-item-frame" : ""}`} onClick={() => {props.clickCallback(props.country.capital)}}>
@@ -17,7 +21,7 @@ const CountriesListItem = (props: CountryListItemProps) => {
 
                 <div className="country-item">
                     <div className="small-label">Population:</div>
-                    <div className="value">{props.country.population}</div>
+                    <div className="value">{formatPopulationNumber(props.country.population)}</div>
                 </div>
                 
                 <div className="country-item">
