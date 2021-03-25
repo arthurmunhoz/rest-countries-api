@@ -185,12 +185,43 @@
   background-color: hsl(209, 23%, 22%) ;
 }
 
+
 .MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:focus {
-  background-color: rgba(197, 197, 197, 0.671) !important;
+  background-color: rgba(224, 224, 224, 0.671) !important;
+}
+
+.dark-regions-options .MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:focus {
+  background-color: hsla(208, 46%, 75%, 0.185) !important;
 }
 
 .MuiListItemText-root span {
   color: black !important;
+}
+
+.regions-options .MuiMenuItem-root {
+  max-height: 33px;
+  width: 224px !important;
+}
+
+.dark-regions-options .MuiMenuItem-root span {
+  color: rgba(255, 255, 255, 0.815) !important;
+}
+  
+.dark-regions-options .MuiPaper-root {
+  width: 224px;
+
+  margin-top: 4px;
+  /* transform: translateX(-10px) !important; */
+  border: none !important;
+  background-color: transparent !important;
+
+  -webkit-box-shadow: 0px 3px 5px 0px hsl(208, 28%, 14%) !important;
+  -moz-box-shadow: 0px 3px 5px 0px hsl(208, 28%, 14%) !important;
+  box-shadow: 0px 3px 5px 0px hsl(208, 28%, 14%) !important;
+}
+
+.dark-regions-options .MuiList-root {
+  background-color: hsl(209, 23%, 22%) !important;
 }
 
 @media (max-width: 650px) {

@@ -7,6 +7,7 @@ import './CountryDetails.css'
 import { getCountryByCode } from "../../api/APIManager";
 import { useEffect, useState } from "react";
 import { formatPopulationNumber } from "../CountryListItem/CountriesListItem";
+import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 interface CountryDetailsProps {
   list: Country[],
   darkTheme: boolean
@@ -28,6 +29,21 @@ const CountryDetails = (props: CountryDetailsProps) => {
   useEffect(() => {
     console.log("country: ", country);
   }, [country]);
+
+  const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+      root: {
+        display: 'flex',
+        justifyContent: 'left',
+        flexWrap: 'wrap',
+        '& > *': {
+          margin: theme.spacing(0.5),
+        },
+      },
+    }),
+  );
+
+  const classes = useStyles();
 
   return (
     country ? <div className="body">
@@ -91,12 +107,14 @@ const CountryDetails = (props: CountryDetailsProps) => {
 
           <div className={`country-item-cd border-countries-frame ${props.darkTheme ? "dark-country-item-cd" : ""}`}>
             <div className="small-label-cd">Border countries:</div>
-            {
-              (country.borders.length > 0) ? country.borders.map(ctryAlpha3Code => {
-                return <div className={`chip ${props.darkTheme ? "dark-chip" : ""}`}>{props.list.find(c => c.alpha3Code === ctryAlpha3Code)?.name}</div>
-              }) : <div className="value-cd">-</div>}
+            <div className={classes.root}>
+              {
+                (country.borders.length > 0) ? country.borders.map(ctryAlpha3Code => {
+                  return <div className={`chip ${props.darkTheme ? "dark-chip" : ""}`}>{props.list.find(c => c.alpha3Code === ctryAlpha3Code)?.name}</div>
+                }) : <div className="value-cd">-</div>
+              }
+            </div>
           </div>
-
         </div>
       </div>
     </div> : <></>

@@ -38,10 +38,11 @@
 }
 
 .country-info-frame {
-  height: calc(100vh - 204px);
-  max-height: calc(100vh - 204px);
+  height: calc(100vh - 194px);
+  max-height: calc(100vh - 194px);
   display: flex;
   padding: 24px;
+  overflow-x: hidden;
 }
 
 .country-info-frame > img {
@@ -57,6 +58,8 @@
   display: flex;
   flex-direction: column;
   margin-left: 32px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .info-grid {
@@ -92,7 +95,12 @@
 
 .border-countries-frame {
   width: fit-content;
+  max-width: 100%;
   margin-top: 48px;
+}
+
+.border-countries-frame .small-label-cd{
+  white-space: nowrap;
 }
 
 .value-cd {
@@ -122,7 +130,7 @@
   display: grid;
   place-items: center;
 
-  margin-right: 12px;
+  margin: 0 12px 12px 0 !important;
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 4px;
@@ -150,6 +158,10 @@
   .chip {
     margin-bottom: 8px;
   }
+
+  .border-countries-frame > .small-label-cd {
+    margin-bottom: 18px;
+  }
 }
 
 @media (max-width: 707px) {
@@ -157,7 +169,7 @@
     overflow-y: auto;
     flex-direction: column;
   }
-
+  
   .country-info-frame > img {
     max-width: 80%;
     max-height: 200px;
@@ -168,19 +180,19 @@
   .text-info-frame {
     height: fit-content;
   }
-
+  
   .grid-right {
     margin-top: 18px;
   }
-
+  
   .border-countries-frame {
     width: 100%;
   }
-
+  
   .border-countries-frame > .small-label-cd {
-    margin-bottom: 18px;
+    margin-bottom: 12px;
   }
-
+  
   .country-item-cd, .name-cd {
     padding: 0;
   }

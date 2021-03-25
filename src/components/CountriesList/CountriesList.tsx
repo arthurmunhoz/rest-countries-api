@@ -132,6 +132,7 @@ const CountriesList = (props: CountriesListProps) => {
           <ArrowDropDownIcon fontSize={'default'} />
         </div>
         <StyledMenu
+        className={`regions-options ${props.darkTheme ? "dark-regions-options" : ""}`}
           id="customized-menu"
           anchorEl={anchorEl}
           keepMounted
