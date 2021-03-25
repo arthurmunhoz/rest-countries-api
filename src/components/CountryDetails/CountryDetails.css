@@ -143,6 +143,8 @@
 
   font-size: 12px;
   font-weight: normal;
+
+  cursor: pointer;
 }
 
 @media (max-width: 907px) {

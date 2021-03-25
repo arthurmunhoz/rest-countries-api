@@ -30,6 +30,12 @@ const CountryDetails = (props: CountryDetailsProps) => {
     console.log("country: ", country);
   }, [country]);
 
+  const handleChipClick = (ctryAlpha3Code: string) => {
+    const newCountry = props.list.find(c => c.alpha3Code === ctryAlpha3Code);
+
+    newCountry && setCountry(newCountry)
+  }
+
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       root: {
@@ -110,7 +116,12 @@ const CountryDetails = (props: CountryDetailsProps) => {
             <div className={classes.root}>
               {
                 (country.borders.length > 0) ? country.borders.map(ctryAlpha3Code => {
-                  return <div className={`chip ${props.darkTheme ? "dark-chip" : ""}`}>{props.list.find(c => c.alpha3Code === ctryAlpha3Code)?.name}</div>
+                  return <div
+                    className={`chip ${props.darkTheme ? "dark-chip" : ""}`}
+                    onClick={() => handleChipClick(ctryAlpha3Code)}
+                  >
+                    {props.list.find(c => c.alpha3Code === ctryAlpha3Code)?.name}
+                  </div>
                 }) : <div className="value-cd">-</div>
               }
             </div>
