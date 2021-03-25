@@ -7,6 +7,7 @@ import { BrowserRouter, Switch, Route, useLocation } from 'react-router-dom'
 import CountriesList from './components/CountriesList/CountriesList';
 import CountryDetails from './components/CountryDetails/CountryDetails';
 import { Button, createStyles, makeStyles, Theme } from '@material-ui/core';
+import worldwide from './res/images/worldwide.svg'
 
 export const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -46,7 +47,10 @@ const App = () => {
 
     <div className={`frame ${darkTheme ? "dark-frame" : ""}`}>
       <div className={`header ${darkTheme ? "dark-header" : ""}`}>
-        <h3>Where in the world?</h3>
+        <div className="app-title-frame">
+          <img src={worldwide} width="24px" style={{ marginRight:"12px" }} alt="app icon"/>
+          <h3>Where in the world?</h3>
+        </div>
         <Button
           variant="contained"
           color="inherit"

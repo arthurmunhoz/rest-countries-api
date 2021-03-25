@@ -41,6 +41,10 @@
   background-color: white;
 }
 
+.app-title-frame {
+  display: flex;
+}
+
 .dark-button-custom {
   background: transparent !important;
   color: rgba(255, 255, 255, 0.781) !important;
