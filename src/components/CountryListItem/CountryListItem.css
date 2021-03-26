@@ -59,6 +59,13 @@
     font-weight: bold;
 }
 
+.value {
+  max-width: 100% !important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
 .country-item {
   display: flex;
   flex-direction: row;
@@ -69,6 +76,7 @@
   font-size: 14px;
   padding-left: 14px;
   padding-right: 14px;
+  overflow: hidden !important;
 }
 
 .small-label {
