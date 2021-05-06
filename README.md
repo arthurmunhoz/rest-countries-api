@@ -1,7 +1,7 @@
-# REST Countries API with color theme switcher
+## REST Countries API with color theme switcher
 
 ### Created by `Arthur Regatieri Munhoz`
-<br><br>
+<br>
 
 ## Description
 This webpage displays a country list from the result of an API, where the users can view each country details. Searching and filtering the list by region features are also available.
@@ -20,7 +20,7 @@ Users should be able to:
 - Toggle the color scheme between light and dark mode *(optional)*
 <br>
 
-# Access the live website at: https://countries-arm.netlify.app
+### Access the live website at: https://countries-arm.netlify.app
 <br>
 
 # Tech Stack
