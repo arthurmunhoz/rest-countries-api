@@ -1,10 +1,13 @@
-# Frontend Mentor - REST Countries API with color theme switcher
+# REST Countries API with color theme switcher
 
-# Author: Arthur Regatieri Munhoz
-# Overview
+### Created by `Arthur Regatieri Munhoz`
+<br><br>
 
+## Description
 This webpage displays a country list from the result of an API, where the users can view each country details. Searching and filtering the list by region features are also available.
 Made in React using typescript I created the solution both for desktop and mobile devices.
+
+<br>
 ### The challenge
 
 Users should be able to:
@@ -15,16 +18,19 @@ Users should be able to:
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode *(optional)*
+<br>
 
 # Access the live website at: https://countries-arm.netlify.app
+<br>
 
 # Tech Stack
-
 - React
 - Typescript
 - HTML
 - CSS
 - Bootstrap
+<br>
+
 # Screenshots
 
 ![](./screenshots/list-light.png)
